@@ -2,7 +2,7 @@ FROM phusion/passenger-full
 
 ADD  bootstrap.sh /tmp/
 ADD  config.js /tmp/
-ADD  kiwiirc.run /etc/service/kiwiirc
+ADD  kiwiirc.run /tmp/
 RUN  chmod +x /tmp/bootstrap.sh ; /tmp/bootstrap.sh; 
 
 EXPOSE 7778 7777
