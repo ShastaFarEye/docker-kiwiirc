@@ -35,8 +35,6 @@ touch /etc/service/sshd/down
 touch /etc/service/cron/down
 npm update
 ./kiwi build
-mkdir /etc/service/kiwiirc
-cp /tmp/kiwiirc.run /etc/service/kiwiirc
 chmod +x /etc/service/kiwiirc
 
 
