@@ -28,16 +28,17 @@ echo "HEAD /" | nc `cat /tmp/host_ip.txt` 8000 | grep squid-deb-proxy \
 cd /
 git clone https://github.com/prawnsalad/KiwiIRC
 mv /tmp/config.js KiwiIRC
-mkdir /etc/service/kiwiirc
-mv /tmp/kiwiirc.run /etc/service/kiwiirc/run
-chmod +x /etc/service/kiwiirc/run
-
+mv /tmp/default /etc/nginx/sites-available/default
 cd KiwiIRC
 mv config.example.js dontuse_this.config
+rm /etc/service/nginx/down
 touch /etc/service/sshd/down
 touch /etc/service/cron/down
 npm update
 ./kiwi build
+mkdir /etc/service/kiwiirc
+mv /tmp/kiwiirc.run /etc/service/kiwiirc/run
+chmod +x /etc/service/kiwiirc/run
 
 
 # Clean up
